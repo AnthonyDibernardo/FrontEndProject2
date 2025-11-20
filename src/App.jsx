@@ -3,15 +3,18 @@ import './App.css'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { UserProvider } from './components/Provider.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
   return (
     <UserProvider>
-      <div className='page'>
-        <Header />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div className='page'>
+          <Header />
+          <Footer />
+        </div>
+      </BrowserRouter>
     </UserProvider>
   )
 }
