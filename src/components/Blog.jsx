@@ -5,9 +5,8 @@ import { useUser } from "./Provider";
 import axios from 'axios'
 
 function Blog(){
-    const UserContext = useUser;
-    const user = UserContext.user;
-    const theme = user.theme;
+    const { user, login, logout, toggleTheme } = useUser();
+    const theme = user.theme;                                 
     const [loading, setLoading] = useState(true);
     const [posts, setPost] = useState([]);
 
@@ -24,8 +23,11 @@ function Blog(){
     console.log(user.loggedIn);
     return (
         <>
-            {user.loggedIn ? 
-                <Home />
+            {!user.loggedIn ? 
+                <>
+                    <h2>Sorry you cannot access this, please log in</h2>
+                    <Home />
+                </>
             : 
                 <div className={theme}>
                     <h2>Welcome to Our Blog<br></br> below are our posts</h2>
