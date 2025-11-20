@@ -4,11 +4,12 @@ import axios from 'axios';
 import Content from './Content.jsx';
 
 function Post({id}){
-    const { user } = useUser;
+    const { user, login, logout, toggleTheme } = useUser();
     const theme = user.theme;
 
     const [loading, setLoading] = useState(true);
     const [postData, setPostData] = useState();
+    console.log(id);
 
     useEffect(() => {
         //Experimental and for testing

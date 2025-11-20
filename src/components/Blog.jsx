@@ -20,7 +20,6 @@ function Blog(){
         })
         .finally(() => setLoading(false));
     }, []);
-    console.log(user.loggedIn);
     return (
         <>
             {!user.loggedIn ? 
@@ -36,7 +35,7 @@ function Blog(){
                     ) : (
                         posts.map( post => (
                             <li key={post.id}>
-                                <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                                <Link to={`/blog/${post.id}`}>{post.title}</Link>
                             </li>
                         ))   
                     )
