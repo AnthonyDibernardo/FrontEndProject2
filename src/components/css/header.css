@@ -1,6 +1,9 @@
 
-
 header {
-    background-color: #99b3ff;
     text-align: center;
+}
+
+header .user.light{
+    background-color: #99b3ff;
+    
 }
