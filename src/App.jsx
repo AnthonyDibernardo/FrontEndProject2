@@ -8,8 +8,10 @@ function App() {
 
   return (
     <UserProvider>
+      <div className='page'>
         <Header />
         <Footer />
+      </div>
     </UserProvider>
   )
 }
