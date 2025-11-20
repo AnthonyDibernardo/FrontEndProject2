@@ -22,3 +22,11 @@ header .dark{
 .light :visited {
     color: #002080;
 }
+
+.pageNav {
+    margin: 5vh;
+}
+
+button {
+    margin: 1vh;
+}
