@@ -2,12 +2,18 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "./Context.jsx";
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState(UserContext);
-    const login = (user, pass) => {
-        setUser({ username: user, password: pass, loggedIn: true });
+    const [user, setUser] = useState({
+        username: '',
+        email: '',
+        password: '',
+        theme: 'dark',
+        loggedIn: false
+    });   
+    const login = (user, email, pass) => {
+        setUser(prev => ({ ...prev, username: user, email, password: pass, loggedIn: true }));
     };
     const logout = () => {
-        setUser({ username: "", password: "", loggedIn: false });
+        setUser(prev => ({ ...prev, username: "", email: "", password: "", loggedIn: false }));
     };
     const toggleTheme = () => {
         setUser(prev => ({

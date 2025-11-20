@@ -7,7 +7,7 @@ function Login(){
     const navigate = useNavigate();
     const formLogin = (e) => {
         e.preventDefault();
-        login(e.target[0].value, e.target[1].value);
+        login(e.target[0].value, e.target[1].value, e.target[2].value);
         navigate("/");
     };
     const formLogoff = () => {
@@ -25,6 +25,7 @@ function Login(){
             :
                 <form id="authForm" className={theme} onSubmit={formLogin}>
                     <input type="text" placeholder="name"/><br/>
+                    <input type="email" placeholder="email"/><br/>
                     <input type="password" placeholder="password"/><br/>
                     <button type="submit">Login</button>
                 </form>
