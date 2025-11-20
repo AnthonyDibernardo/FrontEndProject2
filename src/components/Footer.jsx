@@ -1,5 +1,7 @@
 import React from "react";
 import { useUser } from "./Provider";
+import './css/footer.css'
+
 
 function Footer(){
     const { user, login, logout, toggleTheme } = useUser();
