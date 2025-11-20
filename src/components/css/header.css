@@ -14,3 +14,11 @@ header .dark{
     background-color: #002080;
     color: white;
 }
+
+.dark :visited {
+    color: #99b3ff;
+}
+
+.light :visited {
+    color: #002080;
+}
