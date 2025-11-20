@@ -19,7 +19,14 @@ export const UserProvider = ({ children }) => {
         }));
     };
     const logout = () => {
-        setUser(prev => ({ ...prev, username: "", email: "", password: "", loggedIn: false }));
+        setUser(prev => ({ 
+            ...prev, 
+            username: "", 
+            email: "", 
+            password: "", 
+            loggedIn: false,
+            theme: prev.theme // Preserve theme on logout
+        }));
     };
     const toggleTheme = () => {
         setUser(prev => ({
