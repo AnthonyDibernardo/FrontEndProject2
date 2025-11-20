@@ -4,8 +4,8 @@ import axios from 'axios';
 import Content from './Content.jsx';
 
 function Post({id}){
-    const user = useUser;
-    let mode = user.theme;
+    const { user } = useUser;
+    const theme = user.theme;
 
     const [loading, setLoading] = useState(true);
     const [postData, setPostData] = useState();
@@ -32,7 +32,7 @@ function Post({id}){
             .finally(() => setLoading(false));
     }, [postData]);
     return (
-        <main className={mode}>
+        <main className={theme}>
             {loading ? (<p>Loading</p>) : (<>
                 <Content 
                 title={postData.title}

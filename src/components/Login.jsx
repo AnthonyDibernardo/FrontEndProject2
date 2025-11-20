@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "./Provider.jsx";
 
 function Login(){
-    const { user, logout, login } = useUser();
+    const { user, login, logout, toggleTheme } = useUser();
     const theme = user.theme;
     const navigate = useNavigate();
     const formLogin = (e) => {
@@ -17,7 +17,7 @@ function Login(){
 
     return(
         <div className={theme}>
-            {user.auth ?
+            {user.loggedIn ?
                 <div id="authForm" className={theme}>
                     <p>Would you like to log out</p>
                     <button type="button" onClick={formLogoff}>Log Out</button>

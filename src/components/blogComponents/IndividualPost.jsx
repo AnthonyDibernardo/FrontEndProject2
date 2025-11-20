@@ -6,8 +6,8 @@ import axios from "axios";
 import { useUser } from "../Provider";
 
 function IndividualPost(){
-    const { user } = useUser;
-    const theme = user.theme;
+    const { user, login, logout, toggleTheme } = useUser();
+    const theme = user.theme;                                 
     const { id } = useParams();
     const [comment, setComment] = useState({
         postId: {id}, 
