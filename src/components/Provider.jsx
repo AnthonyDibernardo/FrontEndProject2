@@ -10,7 +10,13 @@ export const UserProvider = ({ children }) => {
         loggedIn: false
     });   
     const login = (user, email, pass) => {
-        setUser(prev => ({ ...prev, username: user, email, password: pass, loggedIn: true }));
+        setUser(prev => ({
+            ...prev, 
+            username: user, 
+            email: email, 
+            password: pass, 
+            loggedIn: true 
+        }));
     };
     const logout = () => {
         setUser(prev => ({ ...prev, username: "", email: "", password: "", loggedIn: false }));
