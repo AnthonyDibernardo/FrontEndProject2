@@ -9,10 +9,12 @@ function App() {
 
   return (
     <UserProvider>
-        <BrowserRouter>
-            <Header />
-        </BrowserRouter>
-        <Footer />
+      <BrowserRouter>
+        <div className='page'>
+          <Header />
+          <Footer />
+        </div>
+      </BrowserRouter>
     </UserProvider>
   )
 }
