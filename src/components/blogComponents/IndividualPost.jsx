@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import Post from "./post";
+import Home from "../Home.jsx";
 import IndividualComment from "./IndividualComment";
 import axios from "axios";
 import { useUser } from "../Provider";
@@ -29,7 +30,7 @@ function IndividualPost(){
     };
     return(
         <>
-            {user.loggedIn ? 
+            {!user.loggedIn ? 
                 <Home />
                 : 
                 <div className={theme}>

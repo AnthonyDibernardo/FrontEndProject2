@@ -4,7 +4,7 @@ import Home from './Home.jsx'
 import Contact from './Contact.jsx'
 import Blog from './Blog.jsx'
 import Login from './Login.jsx'
-import BlogPost from './blogComponents/post.jsx'
+import BlogPost from './blogComponents/IndividualPost.jsx'
 import { useUser } from "./Provider.jsx";
 
 
