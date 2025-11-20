@@ -1,4 +1,10 @@
 
 footer .light {
     background-color: #99b3ff;
+    color: black;
+}
+
+footer .dark {
+    background-color: #002080;
+    color: white;
 }

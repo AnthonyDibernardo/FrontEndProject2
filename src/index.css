@@ -3,5 +3,11 @@
 
 div .light {
     background-color: #809fff;
+    color: black;
+}
+
+div .dark {
+    background-color: #002699;
+    color: white;
 }
 

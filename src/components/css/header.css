@@ -5,5 +5,11 @@ header {
 
 header .light{
     background-color: #99b3ff;
+    color: black;
     
+}
+
+header .dark{
+    background-color: #002080;
+    color: white;
 }
