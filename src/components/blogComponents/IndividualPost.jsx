@@ -30,26 +30,31 @@ function IndividualPost(){
     };
     return(
         <>
-            {!user.loggedIn ? 
-                <Home />
-                : 
-                <div className={theme}>
-                    <Post id={id} />
-                    <h3>Comments</h3>
-                    <IndividualComment id={id} />
-                    <br />
-                    <textarea
-                        value={comment.content}
-                        onChange={(e) => setComment({...comment, content: e.target.value})}
-                    />
-                    <br />
-                    <button 
-                        type="submit"
-                        onClick={() => addComment(comment)}>
-                        Submit
-                    </button>
-                </div>
-            }
+            <div className={theme}>
+                <Post id={id} />
+                <h3>Comments</h3>
+                <IndividualComment id={id} />
+                <br />
+
+                {!user.loggedIn ? 
+                <>
+                        <h2>Please Login to post a comment!</h2>
+                </> :
+                    <>  
+                        <textarea
+                            value={comment.content}
+                            onChange={(e) => setComment({...comment, content: e.target.value})}
+                        />
+                        <br />
+                        <button 
+                            type="submit"
+                            onClick={() => addComment(comment)}>
+                            Submit
+                        </button>
+                    </>
+                }
+            </div>
+            
         </>
     );
 }

@@ -22,26 +22,19 @@ function Blog(){
     }, []);
     return (
         <>
-            {!user.loggedIn ? 
-                <>
-                    <h2>Sorry you cannot access this, please log in</h2>
-                    <Home />
-                </>
-            : 
-                <div className={theme}>
-                    <h2>Welcome to Our Blog<br></br> below are our posts</h2>
-                    {loading ? (
-                        <p>Loading</p>
-                    ) : (
-                        posts.map( post => (
-                            <li key={post.id}>
-                                <Link to={`/blog/${post.id}`}>{post.title}</Link>
-                            </li>
-                        ))   
-                    )
-                    }
-                </div>
-            }
+            <div className={theme}>
+                <h2>Welcome to Our Blog<br></br> below are our posts</h2>
+                {loading ? (
+                    <p>Loading</p>
+                ) : (
+                    posts.map( post => (
+                        <li key={post.id}>
+                            <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                        </li>
+                    ))   
+                )
+                }
+            </div>
         </>
     );
 }
