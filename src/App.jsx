@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './components/css/introStyle.css'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { UserProvider } from './components/Provider.jsx'

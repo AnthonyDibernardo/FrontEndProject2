@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
-function IndividualComment({id}){
+function IndividualComment({id, newComments = []}){
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -12,11 +12,15 @@ function IndividualComment({id}){
             .catch(error => console.log(error))
             .finally(setLoading(false));
     }, [id]);
+    
+    // Combine fetched comments with new comments
+    const allComments = [...comments, ...newComments];
+    
     if (loading) return <p>Loading</p>;
-    if (comments.length === 0) return <p>No comments yet, be the first</p>;
+    if (allComments.length === 0) return <p>No comments yet, be the first</p>;
     return(
         <div>
-            {comments.map( comment => (
+            {allComments.map( comment => (
             <div key={comment.id}>
                 <p>{comment.name} &lt;{comment.email}&gt;</p>
                 <p>{comment.body}</p>
